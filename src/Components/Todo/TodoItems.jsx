@@ -1,3 +1,7 @@
-export const TodoItem = ({ todo }) => {
-    return <div>{todo}</div>
+
+
+export const TodoItems = ({value}) => {
+    return (
+        <div >Todos : {value}</div>
+    )
 }
