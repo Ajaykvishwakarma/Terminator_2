@@ -16,6 +16,7 @@
 import './App.css';
 import { useState } from "react";
 import { Todo } from './Components/Todo/Todo';
+import { Grocery } from './Components/Grocery/Grocery';
 
 function App() {
   // V-Dom
@@ -28,6 +29,7 @@ function App() {
       {/* <Left fn = {getData}/> */}
       {/* <Right data={counter}/> */}
       <Todo />
+      <Grocery />
       
     </div>
   );
