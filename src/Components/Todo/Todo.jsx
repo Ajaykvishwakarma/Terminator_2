@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { TodoInput } from "./TodoInput"
 import { TodoItems } from './TodoItems';
+import { Button, ButtonGroup } from '@chakra-ui/react'  
+
 
 export const Todo = () => {
 
@@ -25,7 +27,7 @@ export const Todo = () => {
             {todos.map((e, index) => (
                 <div key={index} style={{border: "1px solid red" , width:"40%", margin:"auto", padding:"5px"}}>
                 <TodoItems value={e} />
-                <button onClick={() => {deleteItem(index)}}>Delete</button>
+                <Button onClick={() => {deleteItem(index)}}>Delete</Button>
                 </div>
             ))}
             

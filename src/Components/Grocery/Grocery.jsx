@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from 'axios';
-
+import { Input } from '@chakra-ui/react';
+import { Button, ButtonGroup } from '@chakra-ui/react'  
 export const Grocery = () => {
 
     const [data, setData] = useState([])
@@ -29,24 +30,26 @@ export const Grocery = () => {
 
     return (
         <div>
+            <div style={{width: "40%" ,margin:"auto"}}>
             <h3>Gro-ce-ry</h3>
             <label>Name: </label>
-            <input type="text" onChange={(e) => {setText(e.target.value)}}/>
+            
+            <Input placeholder='Name'  onChange={(e) => {setText(e.target.value)}}/>
             <label>Age: </label>
-            <input type="number" onChange={(e) => {setText1(e.target.value)}}/>
-            <button
-            onClick={() => {
+            <Input placeholder='Age'  onChange={(e) => {setText1(e.target.value)}}/>
+            </div><br></br>
+            <Button colorScheme='blue' onClick={() => {
                 fetch('http://localhost:8080/glocery', {
                     method: "POST",
                     body: JSON.stringify({name: text, age: text1 }),
                     headers:{
-                        "content-type" : "application/json"
+                        "content-type" : "application/json"  
                     }
                 }).then(()=> {
                     getData()
                 })
-            }}
-            >Add</button><br></br>
+            }}>Add</Button><br></br><br></br>
+           
             {data?.map((e) => (
                 <div key={e.id}>
                     <p>Name: {e.name}, Age: {e.age}</p>
@@ -54,8 +57,8 @@ export const Grocery = () => {
                 </div>
             ))}
 
-            {page == 1 ? "" : <button onClick={() => {handlePage(-1)}}>Prev</button>}
-            <button onClick={() => {handlePage(1)}}>Next</button>
+            {page == 1 ? "" : <Button onClick={() => {handlePage(-1)}}>Prev</Button>}
+             <Button onClick={() => {handlePage(1)}}>Next</Button>
 
         </div>
     )

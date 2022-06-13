@@ -25,5 +25,15 @@
       "age": "5",
       "id": 5
     }
+  ],
+  "users": [
+    {
+      "name": "ajay",
+      "age": "20",
+      "address": "Mumbai",
+      "department": "ceo",
+      "isMarried": true,
+      "id": 1
+    }
   ]
 }

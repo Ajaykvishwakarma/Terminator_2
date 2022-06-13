@@ -15,8 +15,9 @@
 
 import './App.css';
 import { useState } from "react";
-import { Todo } from './Components/Todo/Todo';
-import { Grocery } from './Components/Grocery/Grocery';
+import { AllRoutes } from './Components/AllRoutes/AllRoutes';
+// import { Todo } from './Components/Todo/Todo';
+// import { Grocery } from './Components/Grocery/Grocery';
 
 function App() {
   // V-Dom
@@ -28,8 +29,9 @@ function App() {
       <button onClick={() => {setCounter(counter + 1)}}>Add 1</button> */}
       {/* <Left fn = {getData}/> */}
       {/* <Right data={counter}/> */}
-      <Todo />
-      <Grocery />
+      {/* <Todo />
+      <Grocery /> */}
+      <AllRoutes />
       
     </div>
   );

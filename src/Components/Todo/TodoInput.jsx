@@ -1,5 +1,6 @@
 import { useState } from "react"
-
+import { Input } from '@chakra-ui/react';
+import { Button, ButtonGroup } from '@chakra-ui/react'  
 export const TodoInput = ({ addTodo }) => {
 
     const [text, setText] = useState("");
@@ -7,8 +8,9 @@ export const TodoInput = ({ addTodo }) => {
 
         <div style={{border: "1px solid green" , width:"40%", margin:"auto", padding:"30px"}}>
             <label>Input Task : </label>
-            <input type="text" onChange={(e) => {setText(e.target.value)}}/>
-            <button onClick={() => {addTodo(text)}}>Submit</button>
+            
+            <Input placeholder='Name'  onChange={(e) => {setText(e.target.value)}}/>
+            <Button onClick={() => {addTodo(text)}}>Submit</Button>
 
         </div>
     )
